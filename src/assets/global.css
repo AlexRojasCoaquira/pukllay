@@ -1,0 +1,13 @@
+.video > iframe {
+  width: 100vw;
+  height: 75vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  /* min-height: 100vh;
+  min-width: 177.77vh; */
+  /* position: absolute; */
+  /* left: 50%; */
+  /* transform: translate(-50%, -50%); */
+}
