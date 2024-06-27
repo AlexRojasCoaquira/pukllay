@@ -4,7 +4,7 @@
       class="bg-[#141414] fixed top-0 left-0 w-full text-white py-4 px-10 shadow-md z-10 h-18 flex justify-between items-center"
     >
       <div class="flex gap-12">
-        <img width="140" src="c:\Users\USER\Downloads\pukllay-logo.png" alt="logo" />
+        <img width="140" src="../assets/images/pukllay-logo.png" alt="logo" />
         <ul class="flex items-center gap-10">
           <li class="cursor-pointer">Inicio</li>
           <li class="cursor-pointer">Recuerdos</li>
