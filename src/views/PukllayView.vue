@@ -1,8 +1,22 @@
 <template>
-  <div class="bg-gray-900 flex items-center justify-center min-h-screen">
-    <div class="video">
+  <div class="bg-[#141414]">
+    <div
+      class="bg-[#141414] fixed top-0 left-0 w-full text-white py-4 px-10 shadow-md z-10 h-18 flex justify-between items-center"
+    >
+      <div class="flex gap-12">
+        <img width="140" src="c:\Users\USER\Downloads\pukllay-logo.png" alt="logo" />
+        <ul class="flex items-center gap-10">
+          <li class="cursor-pointer">Inicio</li>
+          <li class="cursor-pointer">Recuerdos</li>
+          <li class="cursor-pointer">Cartas</li>
+          <li class="cursor-pointer">Matrimonio</li>
+        </ul>
+      </div>
+      <div class=""></div>
+    </div>
+    <div class="bg-[#000000] video">
       <iframe
-        src="https://www.youtube.com/embed/8KBTMXaV9U0?si=cmb1G9cy8z3yL0AR"
+        src="https://player.vimeo.com/video/969424659?background=1&autoplay=1&loop=1&byline=0&title=0&muted=0"
         frameborder="0"
         webkitallowfullscreen
         mozallowfullscreen
@@ -10,30 +24,7 @@
         data-not-lazy
       ></iframe>
     </div>
-    <!-- <iframe
-      width="560"
-      height="315"
-      src="https://www.youtube.com/embed/8KBTMXaV9U0?si=cmb1G9cy8z3yL0AR"
-      title="YouTube video player"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      referrerpolicy="strict-origin-when-cross-origin"
-      allowfullscreen
-    ></iframe> -->
-    <!-- <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4 video-container">
-      <div class="video-item bg-gray-800 rounded-lg overflow-hidden">
-        <video class="w-full h-auto" src="https://www.w3schools.com/html/mov_bbb.mp4" controls></video>
-      </div>
-      <div class="video-item bg-gray-800 rounded-lg overflow-hidden">
-        <video class="w-full h-auto" src="https://www.w3schools.com/html/mov_bbb.mp4" controls></video>
-      </div>
-      <div class="video-item bg-gray-800 rounded-lg overflow-hidden">
-        <video class="w-full h-auto" src="https://www.w3schools.com/html/mov_bbb.mp4" controls></video>
-      </div>
-      <div class="video-item bg-gray-800 rounded-lg overflow-hidden">
-        <video class="w-full h-auto" src="https://www.w3schools.com/html/mov_bbb.mp4" controls></video>
-      </div>
-    </div> -->
+    <div class="h-80">Hola</div>
   </div>
 </template>
 <script setup></script>
