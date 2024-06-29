@@ -1,10 +1,10 @@
 <template>
-  <div class="w-96 p-10 bg-[#000000c8] rounded">
+  <div class="w-96 p-10 bg-[#000000c8] rounded-xl">
     <div class="content-auth">
-      <div class="">
+      <div class="flex flex-col items-center">
         <h1 class="text-center text-white text-2xl font-bold mb-5">NUESTRA PRIMERA EMPRESA</h1>
         <InputCustom v-model="key"></InputCustom>
-        <ButtonCustom class="text-center" label="Verificar" @click="verifyKey()"></ButtonCustom>
+        <ButtonCustom class="w-full mt-4 text-center" label="Verificar" @click="verifyKey()"></ButtonCustom>
       </div>
     </div>
   </div>

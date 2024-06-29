@@ -1,8 +1,8 @@
 <template>
-  <div class="bg-[#141414] h-screen shadow-inner-top flex items-center justify-center">
-    <div class="text-center">
-      <h4 class="text-white text-5xl font-semibold">¿Quién está viendo ahora?</h4>
-      <div class="flex justify-between gap-8 mt-10">
+  <div class="bg-[#141414] min-h-screen shadow-inner-top flex items-center justify-center py-4">
+    <div class="text-center h-full">
+      <h4 class="text-white text-3xl xl:text-5xl font-semibold">¿Quién está viendo ahora?</h4>
+      <div class="flex flex-col md:flex-row items-center justify-between gap-8 mt-10">
         <div class="text-center w-40">
           <img
             class="w-full rounded-xl mb-2 hover:border-white hover:border-4 transition duration-300 ease-in-out"

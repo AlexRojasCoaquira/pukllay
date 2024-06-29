@@ -12,7 +12,7 @@
       ></iframe> -->
       <iframe
         title="vimeo-player"
-        src="https://player.vimeo.com/video/969424659?h=4177008ab2&background=1&loop=1&byline=0&title=0&muted=0"
+        src="https://player.vimeo.com/video/969424659?h=4177008ab2"
         frameborder="0"
         webkitallowfullscreen
         mozallowfullscreen
