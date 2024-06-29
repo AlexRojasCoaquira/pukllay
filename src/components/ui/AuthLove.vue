@@ -17,7 +17,7 @@ import { useRouter } from 'vue-router'
 const key = ref('')
 const router = useRouter()
 const verifyKey = () => {
-  if (key.value.toUpperCase() === 'pukllay') {
+  if (key.value === 'pukllay' || key.value === 'Pukllay') {
     console.log('go')
     router.push('user')
   } else {
