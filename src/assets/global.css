@@ -1,3 +1,7 @@
+.page {
+  margin-top: 80px;
+  min-height: calc(100vh - 80px);
+}
 .video {
   height: 90vh;
   display: flex;
@@ -5,7 +9,7 @@
 }
 .video > iframe {
   width: 100%;
-  height: 95%;
+  height: 100%;
   position: absolute;
   top: 0;
   left: 0;
