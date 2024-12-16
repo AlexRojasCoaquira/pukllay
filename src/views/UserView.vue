@@ -11,7 +11,7 @@
         >
           <img
             class="w-full rounded-xl mb-2 hover:border-white hover:border-4 transition duration-300 ease-in-out"
-            :src="`/src/assets/images/${user.image}.png`"
+            :src="`https://res.cloudinary.com/ddq6ilgjr/image/upload/v1734314687/${user.image}.png`"
             alt="user1"
           />
           <span class="text-[grey] leading text-xl hover:text-white">{{ `${user.name} ${user.lastname}` }}</span>
