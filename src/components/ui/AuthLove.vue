@@ -3,7 +3,7 @@
     <div class="content-auth">
       <div class="flex flex-col items-center">
         <h1 class="text-center text-white text-2xl font-bold mb-5">NUESTRA PRIMERA EMPRESA</h1>
-        <InputCustom v-model="key"></InputCustom>
+        <InputCustom v-model="key" @keyUpEnter="verifyKey()"></InputCustom>
         <ButtonCustom class="w-full mt-4 text-center" label="Verificar" @click="verifyKey()"></ButtonCustom>
       </div>
     </div>

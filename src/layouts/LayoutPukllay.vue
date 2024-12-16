@@ -35,9 +35,8 @@
             <router-link to="/pukllay/marry" class="cursor-pointer text-xl">Matrimonio</router-link>
           </ul>
         </div>
-        <div class=""></div>
       </div>
-      <router-view></router-view>
+      <router-view class="mt-[80px]"></router-view>
     </div>
   </div>
 </template>

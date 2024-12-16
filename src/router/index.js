@@ -45,8 +45,17 @@ const router = createRouter({
         },
       ]
     },
-
-
+    {
+      path: '/travel',
+      component: () => import('../layouts/LayoutPukllay.vue'),
+      children: [
+        {
+          path: '',
+          name: 'travel',
+          component: () => import('../views/TravelView.vue'),
+        },
+      ]
+    }
   ],
 })
 
