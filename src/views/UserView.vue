@@ -2,7 +2,7 @@
   <div class="bg-[#141414] min-h-screen shadow-inner-top flex items-center justify-center py-4">
     <div class="text-center h-full">
       <h4 class="text-white text-3xl xl:text-5xl font-semibold">¿Quién está viendo ahora?</h4>
-      <div class="grid grid-cols-2 justify-center md:flex gap-6 mt-10">
+      <div class="grid justify-center md:flex md:flex-wrap gap-6 mt-10">
         <div
           v-for="(user, idx) of USERS"
           :key="idx"
