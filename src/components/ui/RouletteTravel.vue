@@ -1,133 +1,161 @@
 <template>
-  <div class="flex flex-col items-center h-screen">
-    <div class="roulette border-4 border-gray-500 rounded-full relative" :style="rouletteStyle" v-if="items.length">
-      <!-- Generamos cada segmento dinámicamente -->
-      <div v-for="(i, index) in items" :key="index" :style="segmentStyle(index)" class="segment">
-        <!-- Puedes colocar contenido dentro de cada segmento si lo deseas -->
-        <span class="segment-label">{{ i.name }}</span>
-      </div>
+  <div class="roulette-container">
+    <div class="" v-if="!items.length">Agregue ciudades para empezar</div>
+    <div class="roulette" v-if="items.length">
+      <!-- Ruleta -->
+      <svg :width="size" :height="size" class="wheel" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <g transform="translate(50,50)">
+          <template v-for="(segment, index) in items" :key="index">
+            <path
+              :d="getPath(index)"
+              :fill="
+                (selectedIndex === index && !spinning.value) || (selectedSegment && selectedSegment.id === segment.id)
+                  ? 'gray'
+                  : segment.color
+              "
+              stroke="#fff"
+              stroke-width="0.5"
+            />
+            <text
+              :x="getTextPosition(index).x"
+              :y="getTextPosition(index).y"
+              fill="#000"
+              font-size="3"
+              text-anchor="middle"
+              alignment-baseline="middle"
+              :transform="`rotate(${getTextRotation(index)} ${getTextPosition(index).x} ${getTextPosition(index).y})`"
+            >
+              {{ segment.name }}
+            </text>
+          </template>
+        </g>
+      </svg>
     </div>
-    <div class="roulette border-4 border-gray-500 rounded-full relative bg-red-300" v-else></div>
-    <button class="mt-8 px-4 w-40 bg-green-500 text-white rounded" @click="spin">Girar {{ props.items.length }}</button>
+
+    <button v-if="items.length" @click="startSpinning" :disabled="spinning">¡Girar!</button>
+    <p v-if="selectedSegment">¡Seleccionado: {{ selectedSegment.name }}!</p>
   </div>
 </template>
 
 <script setup>
-import { ref, computed, defineProps } from 'vue'
+import { ref } from 'vue'
+
+const size = 300
 const props = defineProps({
   items: {
     type: Array,
     default: () => [],
   },
 })
-// Estado reactivo con ref()
-const rotation = ref(0) // Rotación inicial
-const isSpinning = ref(false) // Evita múltiples giros simultáneos
-const pastelColors = [
-  '#FAD02E', // Amarillo pastel
-  '#F28D35', // Naranja pastel
-  '#D83367', // Rosa pastel
-  '#6B8E23', // Verde pastel
-  '#99C5C1', // Azul pastel
-  '#FFB7C5', // Lavanda pastel
-  '#B7D3EB', // Azul cielo pastel
-  '#F5A6D3', // Rosa suave pastel
-  '#D8A7B1', // Rosa nude pastel
-  '#FFCB77', // Durazno pastel
-  '#F4D1AE', // Beige pastel
-  '#A4D3A5', // Verde menta pastel
-  '#A7C6ED', // Azul claro pastel
-  '#F9C7B5', // Coral pastel
-  '#F2C0A0', // Melocotón pastel
-  '#E3C8F3', // Lavanda claro pastel
-  '#B3D9C7', // Menta pastel
-  '#E1F5A9', // Amarillo pálido pastel
-]
-const segmentAngle = computed(() => 360 / props.items.length) // Ángulo de cada segmento (360 / número de segmentos)
 
-// Generamos el estilo de la ruleta con un gradiente cónico
-const rouletteStyle = computed(() => {
-  const gradient = `conic-gradient(${pastelColors
-    .map((color, index) => `${color} ${index * segmentAngle.value}deg ${(index + 1) * segmentAngle.value}deg`)
-    .join(', ')})`
+const segmentAngle = 360 / props.items.length
+const spinning = ref(false)
+const selectedSegment = ref(null)
+const selectedIndex = ref(null)
 
+const getPath = (index) => {
+  const angle = (2 * Math.PI) / props.items.length
+  const startAngle = index * angle
+  const endAngle = startAngle + angle
+  const largeArcFlag = angle > Math.PI ? 1 : 0
+
+  const startX = 50 * Math.cos(startAngle)
+  const startY = 50 * Math.sin(startAngle)
+  const endX = 50 * Math.cos(endAngle)
+  const endY = 50 * Math.sin(endAngle)
+
+  return `
+        M 0 0
+        L ${startX} ${startY}
+        A 50 50 0 ${largeArcFlag} 1 ${endX} ${endY}
+        Z
+      `
+}
+
+const getTextPosition = (index) => {
+  const angle = ((2 * Math.PI) / props.items.length) * (index + 0.5)
+  const radius = 35
   return {
-    background: gradient,
-    transform: `rotate(${rotation.value}deg)`,
-    transition: 'transform 3s ease-out',
-  }
-})
-
-// Estilo para cada segmento
-const segmentStyle = (index) => {
-  const angleStart = index * segmentAngle.value
-  const angleEnd = (index + 1) * segmentAngle.value
-
-  return {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    width: '50%',
-    height: '50%',
-    backgroundColor: 'transparent',
-    clipPath: `polygon(50% 0, 100% 50%, 50% 100%, 0 50%)`,
-    transform: `rotate(${angleStart}deg)`,
-    transformOrigin: '100% 100%',
+    x: radius * Math.cos(angle),
+    y: radius * Math.sin(angle),
   }
 }
 
-// Función para girar la ruleta
-const spin = () => {
-  if (isSpinning.value) return // Evita giros si ya está en marcha
+const getTextRotation = (index) => {
+  const angle = (360 / props.items.length) * (index + 0.5)
+  return angle - 90
+}
 
-  isSpinning.value = true
-  const extraSpins = Math.floor(Math.random() * 5) + 5 // Giros adicionales aleatorios (5 a 10 vueltas)
-  const randomStopAngle = Math.floor(Math.random() * 360) // Ángulo aleatorio para detenerse
-  const finalRotation = extraSpins * 360 + randomStopAngle // Rotación total
+// Comienza el "giro" de la ruleta
+const startSpinning = () => {
+  if (spinning.value) return
+  spinning.value = true
+  selectedSegment.value = null
 
-  rotation.value += finalRotation // Actualiza la rotación
+  const totalDuration = 5000 // Duración de la animación (5 segundos)
+  const totalRotations = 10 // Número de rotaciones (8 vueltas)
+  const intervalCount = props.items.length
+  const timePerSegment = totalDuration / (intervalCount * totalRotations)
 
-  // Detiene el estado de giro después de la animación
+  let currentIndex = 0
+  const interval = setInterval(() => {
+    selectedIndex.value = currentIndex
+
+    // Resaltar el segmento actual por un pequeño lapso
+    // setTimeout(() => {
+    //   selectedIndex.value = null
+    // }, 400)
+
+    currentIndex++
+
+    if (currentIndex >= intervalCount) {
+      currentIndex = 0
+    }
+  }, timePerSegment) // Animación rápida entre segmentos
+
+  // Detener la animación después de un tiempo
   setTimeout(() => {
-    isSpinning.value = false
-    const selectedSegment = Math.floor((randomStopAngle + (rotation.value % 360)) / segmentAngle.value)
-    console.log(`¡La ruleta se detuvo en el segmento ${selectedSegment + 1}!`)
-  }, 5000) // Tiempo de la animación (ajusta según sea necesario)
+    clearInterval(interval)
+    const finalIndex = Math.floor(Math.random() * intervalCount)
+    selectedSegment.value = props.items[finalIndex]
+
+    selectedIndex.value = finalIndex
+    spinning.value = false
+  }, totalDuration)
 }
 </script>
 
-<style scoped>
-/* Contenedor de la ruleta */
+<style>
+.roulette-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
 .roulette {
   position: relative;
-  overflow: hidden;
-  border-radius: 50%; /* Asegura la forma circular */
-  width: 500px; /* Tamaño de la ruleta */
-  height: 500px; /* Tamaño de la ruleta */
+  width: 300px;
+  height: 300px;
 }
 
-/* Cada segmento dentro de la ruleta */
-.segment {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 50%;
-  height: 50%;
-  clip-path: polygon(100% 50%, 50% 50%, 100% 0, 50% 0); /* Forma de cada segmento */
+.wheel {
+  transform-origin: center;
+  transition: transform 5s cubic-bezier(0.25, 0.1, 0.25, 1); /* Aceleración/desaceleración suave */
 }
 
-.segment-label {
-  position: relative;
-  top: 100px;
-  left: 50%;
-  transform: translateX(-50%);
-  color: white;
-  font-weight: bold;
-}
-
-/* Botón para girar */
 button {
-  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
+}
+
+button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
 }
 </style>

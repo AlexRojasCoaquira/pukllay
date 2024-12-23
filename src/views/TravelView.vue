@@ -1,16 +1,18 @@
 <template>
-  <div class="bg-[#F2F2F2]">
-    <div class="grid grid-cols-2 p-4">
+  <div class="bg-[#FFFFFF]">
+    <div class="grid sm:grid-cols-2 p-4 gap-5">
       <RouletteTravel :items="departmentList"></RouletteTravel>
       <div class="">
-        <ul>
-          <li v-for="(dep, idx) of DEPARTMENTS" :key="idx">
-            <input
-              @change="selectDepartment($event, dep, idx)"
-              type="checkbox"
-              class="form-checkbox text-blue-500 h-5 w-5"
-            />
-            {{ dep.name }}
+        <ul class="flex flex-wrap">
+          <li v-for="(dep, idx) of DEPARTMENTS" :key="idx" class="flex flex-wrap w-1/2">
+            <div class="w2">
+              <input
+                @change="selectDepartment($event, dep, idx)"
+                type="checkbox"
+                class="form-checkbox text-blue-500 h-5 w-5"
+              />
+              {{ dep.name }}
+            </div>
           </li>
         </ul>
       </div>
