@@ -37,13 +37,14 @@
         ti, pero eso yo jamás lo iba a hacer porque estuve realmente ilusionado. Recordé aquella vez(en el restaurant)
         que me bloqueaste en mi cara y me sentí frustado al regresar a casa. Tampoco podía bloquearte, porque eso es de
         cobardes.<br /><br />
-        Simplemente trataba de alejarme de ti. Por eso quería que te enojarás conmigo para que seas tú la que guardes
-        distancia. Pero quería decirtelo calmado (ese momento estabas tensa) y bueno te dije lo que pensaba. No me
-        duelen las palabras, pero cuando dijiste que "yo no pedí que lo hicieras" el mundo se me derrumbó. Ahí me di
-        cuenta de la doble moral que tienes y que solo te interesaba cuando te convenía. Yo sé que a ti las palabras te
-        duelen y lo aprendí tantas veces. Pero que me aplicarás eso, me dolió. Decidí decirte que eres "interesada" y no
-        porque lo económico, sino por interés en emociones conmigo. Pero te alteraste muy rápido y me bloqueaste. Tal
-        vez, era la solución más rápida a todo esto y que desde tu lado me bloquees porque yo no era capaz de hacerlo.
+        Simplemente trataba de alejarme de ti temporalmente. Por eso quería que te enojarás conmigo para que seas tú la
+        que guardes distancia de mí. Pero quería decirtelo calmado (ese momento estabas tensa) y bueno te dije lo que
+        pensaba. No me duelen las palabras, pero cuando dijiste que "yo no pedí que lo hicieras" el mundo se me
+        derrumbó. Ahí me di cuenta de la doble moral que tienes y que solo te interesaba cuando te convenía. Yo sé que a
+        ti las palabras te duelen y lo aprendí tantas veces. Pero que me aplicarás eso, me dolió. Decidí decirte que
+        eres "interesada" y no porque lo económico, sino por interés en emociones conmigo. Pero te alteraste muy rápido
+        y me bloqueaste. Tal vez, era la solución más rápida a todo esto y que desde tu lado me bloquees porque yo no
+        era capaz de hacerlo.
         <br /><br />
         Decidí a decir tonterías para que me bloquees en todos lados y así perder comunicación contigo temporalmente,
         hasta que sanemos del todo(realmente). Me dí cuenta que ambos ibamos a pasarla mal, pero no había de otra para
@@ -54,9 +55,9 @@
         que te escribiría en un mes aprox. Sufrí mucho durante el bloqueo y quize llevarme la peor parte. Fue algo
         necesario para ambos, cortarla de una vez. Pasó un tiempo prudente y logré fortalecerme mentalmente. Espero que
         entiendas algún día que fue para salvarnos a ambos y crecer cada uno por su lado. Como te lo dije una vez, todas
-        las personas merecen la verdad. Cuídate y ten buen año. No me guardes rencor, simplemente sana. No soy tu
-        enemigo y aunque te perdono de todo, espero que el siguiente año tengas una percepción distinta de mi. Y ojalá
-        me cuentes tus anécdotas algún día.
+        las personas merecen la verdad. Cuídate y ten buen año. No me guardes rencor, simplemente sana del todo. No soy
+        tu enemigo y aunque te perdono de todo, espero que el siguiente año tengas una percepción distinta de mi. Y
+        ojalá me cuentes tus anécdotas algún día pero no es el momento todavía. FELIZ AÑO NUEVO
       </p>
       <p class="text-center mt-5 text-2xl"></p>
     </div>
