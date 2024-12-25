@@ -10,7 +10,10 @@ import CardComponent from '@/components/ui/CardComponent.vue'
       <CardComponent title="Tercer mes"></CardComponent>
       <CardComponent title="Cuarto mes"></CardComponent>
       <CardComponent title="Quinto mes"></CardComponent>
-      <CardComponent title="Sexto mes"></CardComponent>
+      <CardComponent
+        title="Sexto mes"
+        description="Si algunas vez me dijiste 'qué quería de cumpleaños?', lo que deseo es ver una versión sanada y exitosa de ti"
+      ></CardComponent>
     </div>
   </div>
 </template>
