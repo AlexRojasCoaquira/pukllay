@@ -59,7 +59,7 @@
         tu enemigo y aunque te perdono de todo, espero que el siguiente año tengas una percepción distinta de mi. Y
         ojalá me cuentes tus anécdotas algún día pero no es el momento todavía. FELIZ AÑO NUEVO
       </p>
-      <p class="text-center mt-5 text-2xl"></p>
+      <p class="text-center mt-5 text-2xl">Pdta: El video lo subiré el 31</p>
     </div>
     <!-- <div class="h-80">Hola</div> -->
   </div>
