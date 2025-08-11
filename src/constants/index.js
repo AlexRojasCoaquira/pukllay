@@ -9,8 +9,8 @@ export const USERS = [
   },
   {
     id: 2,
-    name: 'Keyla Danixa',
-    lastname: 'Guerrero Hoyos',
+    name: 'Amor de mi',
+    lastname: 'vida',
     birthday: '22-05-2002',
     gender: 'M',
     image: 'user2'
