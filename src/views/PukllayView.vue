@@ -19,7 +19,7 @@
         allowfullscreen
         data-not-lazy
       ></iframe> -->
-      <p class="text-center mt-5 text-xl px-5 md:px-40">
+      <!-- <p class="text-center mt-5 text-xl px-5 md:px-40">
         Bueno sé que estás leyendo esto y debes saber toda la verdad. Esperé este tiempo prudente para contarte ya más
         calmados. La relación estuvo rota porque venías con heridas sin sanar que yo no provoqué (no era el momento).
         Todo era complicado para ambos y aunque fue bonito en su momento, pasó a ser un tormento. De alguna manera
@@ -59,7 +59,7 @@
         tu enemigo y aunque te perdono de todo, espero que el siguiente año tengas una percepción distinta de mi. Y
         ojalá me cuentes tus anécdotas algún día pero no es el momento todavía. FELIZ AÑO NUEVO
       </p>
-      <p class="text-center mt-5 text-2xl">Pdta: El video lo subiré el 31</p>
+      <p class="text-center mt-5 text-2xl">Pdta: El video lo subiré el 31</p> -->
     </div>
     <!-- <div class="h-80">Hola</div> -->
   </div>
