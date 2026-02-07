@@ -22,7 +22,7 @@
             src="../assets/images/user2.png"
             alt="user1"
           />
-          <span class="text-[grey] leading text-xl hover:text-white">Keyla Danixa Guerrero Hoyos</span>
+          <span class="text-[grey] leading text-xl hover:text-white">Amor de mi vida</span>
         </div> -->
         <!-- <div class="flex items-center flex-col w-28 md:w-40 cursor-pointer">
           <img
